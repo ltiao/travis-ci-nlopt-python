@@ -10,9 +10,10 @@ before_install:
   - cd nlopt-2.4.2
 
 install:
-  - ./configure PYTHON=`which python` --prefix= --enable-shared
+  - ./configure PYTHON=`which python` --prefix=dirname $(dirname $(which python)) --enable-shared
+  - make
+  - make install
 
 script:
   - python -c 'import numpy'
-  - which python
-  - echo "$TRAVIS_PYTHON_VERSION"
+  - python -c 'import nlopt'
