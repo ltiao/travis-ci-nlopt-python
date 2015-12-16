@@ -9,6 +9,10 @@ before_install:
   - tar -xvf nlopt-2.4.2.tar.gz
   - cd nlopt-2.4.2
 
+install:
+  - ./configure PYTHON=`which python` --prefix= --enable-shared
+
 script:
   - python -c 'import numpy'
   - which python
+  - echo "$WORKON_HOME"
