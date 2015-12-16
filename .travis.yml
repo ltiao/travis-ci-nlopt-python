@@ -15,4 +15,4 @@ install:
 script:
   - python -c 'import numpy'
   - which python
-  - echo "$WORKON_HOME"
+  - echo "$TRAVIS_PYTHON_VERSION"
