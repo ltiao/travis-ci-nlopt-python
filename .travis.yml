@@ -13,6 +13,7 @@ install:
   - PYTHON=$(which python) ./configure --prefix=$(dirname $(dirname $(which python))) --enable-shared
   - make
   - make install
+  - pip freeze
 
 script:
   - python -c 'import nlopt'
